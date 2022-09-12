@@ -47,7 +47,7 @@ public class HzViridianDemoApplication {
                 .setDiscoveryToken(discoveryToken)
                 .setEnabled(true);
         config.setClusterName(clusterName);
-        config.setProperty("hazelcast.client.cloud.url", "https://api.viridian.hazelcast.cloud");
+        config.setProperty("hazelcast.client.cloud.url", "https://api.viridian.hazelcast.com");
 
         return config;
     }
