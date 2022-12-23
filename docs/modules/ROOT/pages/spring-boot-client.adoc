@@ -62,14 +62,14 @@ cd spring-boot-sample
 
 . Open the `src/main/resources/application.properties` file.
 
-. Add connection credentials for your cluster to the `application.properties` file. You can find these credentials in the Hazelcast {hazelcast-cloud} console under *Connect Your Application* > *Advanced Setup*.
+. Add connection credentials for your cluster to the `application.properties` file. You can find these credentials in the Hazelcast {hazelcast-cloud} dashboard for your cluster under *Connect Client* > *Advanced Setup*.
 +
 - `clusterName`
 - `discoveryToken`
 - `keyStorePassword`
 - `trustStorePassword` (same as `keyStorePassword`)
 
-. Download the keystore and truststore files from the Hazelcast {hazelcast-cloud} console and add them to the `src/main/resources/` directory. You can find these files in the Hazelcast {hazelcast-cloud} console under *Connect Your Application* > *Advanced Setup*.
+. Download the keystore and truststore files from the Hazelcast {hazelcast-cloud} console and add them to the `src/main/resources/` directory. You can find these files in the Hazelcast {hazelcast-cloud} dashboard for your cluster under *Connect Client* > *Advanced Setup*.
 
 .`pom.xml`
 [%collapsible]
