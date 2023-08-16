@@ -5,7 +5,6 @@
 :page-categories: Spring Boot, Get Started
 :page-lang: java
 :page-est-time: 10 mins
-:page-serverless: true
 :url-spring-boot: https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started
 :url-spring-hazelcast: https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#io.hazelcast
 :github-directory: https://github.com/hazelcast-guides/spring-boot-sample 
@@ -24,7 +23,7 @@ If you're unfamiliar with Spring or Spring Boot, see the link:{url-spring-boot}[
 
 You need the following:
 
-- A xref:cloud:ROOT:create-serverless-cluster.adoc[{hazelcast-cloud} Serverless cluster].
+- A xref:cloud:ROOT:create-serverless-cluster.adoc[{hazelcast-cloud} Standard cluster].
 - link:https://git-scm.com/book/en/v2/Getting-Started-Installing-Git[Git]
 - link:https://maven.apache.org/install.html[Maven]
 - JDK 8
@@ -62,14 +61,14 @@ cd spring-boot-sample
 
 . Open the `src/main/resources/application.properties` file.
 
-. Add connection credentials for your cluster to the `application.properties` file. You can find these credentials in the Hazelcast {hazelcast-cloud} dashboard for your cluster under *Connect Client* > *Advanced Setup*.
+. Add connection credentials for your cluster to the `application.properties` file. You can find these credentials in the {hazelcast-cloud} dashboard for your cluster under *Connect Client* > *Advanced Setup*.
 +
 - `clusterName`
 - `discoveryToken`
 - `keyStorePassword`
 - `trustStorePassword` (same as `keyStorePassword`)
 
-. Download the keystore and truststore files from the Hazelcast {hazelcast-cloud} console and add them to the `src/main/resources/` directory. You can find these files in the Hazelcast {hazelcast-cloud} dashboard for your cluster under *Connect Client* > *Advanced Setup*.
+. Download the keystore and truststore files from the {hazelcast-cloud} console and add them to the `src/main/resources/` directory. You can find these files in the {hazelcast-cloud} dashboard for your cluster under *Connect Client* > *Advanced Setup*.
 
 .`pom.xml`
 [%collapsible]
@@ -100,7 +99,7 @@ link:{github-directory}/src/main/java/sample/com/hazelcast/demo/viridian/HzVirid
 .`MapService.java`
 [%collapsible]
 ====
-When the `com.hazelcast.client.config.ClientConfig` bean is present, a `HazelcastInstance` is injected into the application classes. This instance is a Hazelcast client with an established connection to the {hazelcast-cloud} Serverless cluster.
+When the `com.hazelcast.client.config.ClientConfig` bean is present, a `HazelcastInstance` is injected into the application classes. This instance is a Hazelcast client with an established connection to the {hazelcast-cloud} Standard cluster.
 
 [source,java]
 ----
@@ -145,7 +144,7 @@ BUILD SUCCESS
 
 == Summary
 
-In this tutorial, you learned how to set up a Spring Boot application to connect to a {hazelcast-cloud} Serverless cluster.
+In this tutorial, you learned how to set up a Spring Boot application to connect to a {hazelcast-cloud} Standard cluster.
 
 == Next Steps
 
