@@ -1,4 +1,4 @@
-package sample.com.hazelcast.demo.viridian;
+package sample.com.hazelcast.demo.cloud;
 
 import java.util.Map;
 import java.util.UUID;
