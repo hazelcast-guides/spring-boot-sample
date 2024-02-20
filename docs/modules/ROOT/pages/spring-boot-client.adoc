@@ -26,7 +26,7 @@ You need the following:
 - A xref:cloud:ROOT:create-serverless-cluster.adoc[{hazelcast-cloud} Standard cluster].
 - link:https://git-scm.com/book/en/v2/Getting-Started-Installing-Git[Git]
 - link:https://maven.apache.org/install.html[Maven]
-- JDK 11, or higher
+- JDK 17 or later
 - `JAVA_HOME` environment variable set to the path of the JDK
 
 
