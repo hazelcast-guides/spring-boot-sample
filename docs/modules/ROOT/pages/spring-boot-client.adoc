@@ -26,7 +26,7 @@ You need the following:
 - A xref:cloud:ROOT:create-serverless-cluster.adoc[{hazelcast-cloud} Standard cluster].
 - link:https://git-scm.com/book/en/v2/Getting-Started-Installing-Git[Git]
 - link:https://maven.apache.org/install.html[Maven]
-- JDK 8
+- JDK 17 or later
 - `JAVA_HOME` environment variable set to the path of the JDK
 
 
@@ -61,9 +61,11 @@ cd spring-boot-sample
 
 . Open the `src/main/resources/application.properties` file.
 
-. Add connection credentials for your cluster to the `application.properties` file. You can find these credentials in the {hazelcast-cloud} dashboard for your cluster under *Connect Client* > *Advanced Setup*.
+. Add connection credentials for your cluster to the `application.properties` file. 
 +
-- `clusterName`
+NOTE: You can find these credentials in the {hazelcast-cloud} dashboard for your cluster; clusterID is provided in the *Cluster details*, and the other credentials in the *Advanced* option under *Connect Client*.
++
+- `clusterID`
 - `discoveryToken`
 - `keyStorePassword`
 - `trustStorePassword` (same as `keyStorePassword`)
@@ -83,17 +85,17 @@ include::spring-boot-sample:example$pom.xml[tag=client]
 link:{github-directory}/pom.xml[View source]
 ====
 
-.`HzViridianDemoApplication.java`
+.`HzCloudDemoApplication.java`
 [%collapsible]
 ====
 Spring Boot first attempts to create a Hazelcast client by checking the presence of a `com.hazelcast.client.config.ClientConfig` bean. This bean is configured using the information in the `application.properties` file.
 
 [source,java]
 ----
-include::spring-boot-sample:example$src/main/java/sample/com/hazelcast/demo/viridian/HzViridianDemoApplication.java[tag=class]
+include::spring-boot-sample:example$src/main/java/sample/com/hazelcast/demo/cloud/HzCloudDemoApplication.java[tag=class]
 ----
 
-link:{github-directory}/src/main/java/sample/com/hazelcast/demo/viridian/HzViridianDemoApplication.java[View source]
+link:{github-directory}/src/main/java/sample/com/hazelcast/demo/cloud/HzCloudDemoApplication.java[View source]
 ====
 
 .`MapService.java`
@@ -103,10 +105,10 @@ When the `com.hazelcast.client.config.ClientConfig` bean is present, a `Hazelcas
 
 [source,java]
 ----
-include::spring-boot-sample:example$src/main/java/sample/com/hazelcast/demo/viridian/MapService.java[tag=class]
+include::spring-boot-sample:example$src/main/java/sample/com/hazelcast/demo/cloud/MapService.java[tag=class]
 ----
 
-link:{github-directory}/src/main/java/sample/com/hazelcast/demo/viridian/MapService.java[View source]
+link:{github-directory}/src/main/java/sample/com/hazelcast/demo/cloud/MapService.java[View source]
 ====
 
 == Step 2. Connect the Client
@@ -131,7 +133,7 @@ mvnw.cmd spring-boot:run
 --
 ====
 
-The client connects to the cluster and adds 10 random entries to a map called `MyMap`.
+The client connects to the cluster and adds ten random entries to a map called `MyMap`.
 
 ```
 ...

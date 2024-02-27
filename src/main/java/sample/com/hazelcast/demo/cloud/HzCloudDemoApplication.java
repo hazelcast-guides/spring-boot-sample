@@ -1,4 +1,4 @@
-package sample.com.hazelcast.demo.viridian;
+package sample.com.hazelcast.demo.cloud;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -15,24 +15,24 @@ import com.hazelcast.config.SSLConfig;
 
 // tag::class[]
 @SpringBootApplication
-public class HzViridianDemoApplication {
+public class HzCloudDemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HzViridianDemoApplication.class, args);
+        SpringApplication.run(HzCloudDemoApplication.class, args);
     }
 
     @ConditionalOnProperty(
-        name = "hazelcast.viridian.tlsEnabled",
+        name = "hazelcast.cloud.tlsEnabled",
         havingValue = "true"
     )
     @Bean
     ClientConfig hazelcastClientConfig(
-        @Value("${hazelcast.viridian.discoveryToken}") String discoveryToken,
-        @Value("${hazelcast.viridian.clusterName}") String clusterName,
-        @Value("${hazelcast.viridian.keyStore}") Resource keyStore,
-        @Value("${hazelcast.viridian.keyStorePassword}") String keyStorePassword,
-        @Value("${hazelcast.viridian.trustStore}") Resource trustStore,
-        @Value("${hazelcast.viridian.trustStorePassword}") String trustStorePassword
+        @Value("${hazelcast.cloud.discoveryToken}") String discoveryToken,
+        @Value("${hazelcast.cloud.clusterId}") String clusterId,
+        @Value("${hazelcast.cloud.keyStore}") Resource keyStore,
+        @Value("${hazelcast.cloud.keyStorePassword}") String keyStorePassword,
+        @Value("${hazelcast.cloud.trustStore}") Resource trustStore,
+        @Value("${hazelcast.cloud.trustStorePassword}") String trustStorePassword
     ) throws IOException {
         Properties props = new Properties();
         props.setProperty("javax.net.ssl.keyStore", keyStore.getURI().getPath());
@@ -46,8 +46,8 @@ public class HzViridianDemoApplication {
             .getCloudConfig()
                 .setDiscoveryToken(discoveryToken)
                 .setEnabled(true);
-        config.setClusterName(clusterName);
-        config.setProperty("hazelcast.client.cloud.url", "https://api.viridian.hazelcast.com");
+        config.setClusterId(clusterId);
+        config.setProperty("hazelcast.client.cloud.url", "https://api.cloud.hazelcast.com");
 
         return config;
     }
