@@ -82,7 +82,7 @@ If the Hazelcast client is on the classpath and a suitable configuration is foun
 include::spring-boot-sample:example$pom.xml[tag=client]
 ----
 
-link:{github-directory}/pom.xml[View source]
+link:{github-directory}/tree/master/pom.xml[View source]
 ====
 
 .`HzCloudDemoApplication.java`
@@ -95,7 +95,7 @@ Spring Boot first attempts to create a Hazelcast client by checking the presence
 include::spring-boot-sample:example$src/main/java/sample/com/hazelcast/demo/cloud/HzCloudDemoApplication.java[tag=class]
 ----
 
-link:{github-directory}/src/main/java/sample/com/hazelcast/demo/cloud/HzCloudDemoApplication.java[View source]
+link:{github-directory}/tree/master/src/main/java/sample/com/hazelcast/demo/cloud/HzCloudDemoApplication.java[View source]
 ====
 
 .`MapService.java`
@@ -108,7 +108,7 @@ When the `com.hazelcast.client.config.ClientConfig` bean is present, a `Hazelcas
 include::spring-boot-sample:example$src/main/java/sample/com/hazelcast/demo/cloud/MapService.java[tag=class]
 ----
 
-link:{github-directory}/src/main/java/sample/com/hazelcast/demo/cloud/MapService.java[View source]
+link:{github-directory}/tree/master/src/main/java/sample/com/hazelcast/demo/cloud/MapService.java[View source]
 ====
 
 == Step 2. Connect the Client
